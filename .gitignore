@@ -1,0 +1,44 @@
+# Ignorar o ambiente virtual
+.venv/
+venv/
+
+# Ignorar configurações do VS Code
+.vscode/
+
+# Ignorar arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar arquivos de log e banco de dados temporários
+*.log
+instance/
+*.sqlite3
+*.db
+
+# Ignorar dependências instaladas
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Ignorar arquivos de ambiente
+.env
+.flaskenv
+
+# Ignorar arquivos gerados pelo sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar pastas e arquivos de distribuição/packaging
+build/
+dist/
+*.egg-info/
+
+# Ignorar caches de testes e ferramentas
+.pytest_cache/
+coverage.xml
+.coverage
+htmlcov/
+
+# Ignorar caches do mypy
+.mypy_cache/
