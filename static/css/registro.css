@@ -1,0 +1,77 @@
+/* Estilo para a seção principal do formulário */
+.registrar-section {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.registrar-section h2 {
+  font-size: 3rem;
+  color: #365942;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.registrar-section p {
+  font-size: 1.8rem;
+  color: #648c3b;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para os grupos de entrada */
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 1.6rem;
+  color: #365942;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.6rem;
+  border: 2px solid #365942;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  border-color: #f2a341;
+  outline: none;
+}
+
+/* Botão de envio */
+button.btn-primary {
+  padding: 1rem 2rem;
+  background-color: #f2a341;
+  color: #365942;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.btn-primary:hover {
+  background-color: #e09d32;
+}
+
+/* Área de feedback */
+.feedback {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  color: #365942;
+}

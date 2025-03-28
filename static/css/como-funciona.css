@@ -1,0 +1,135 @@
+/* Zera margens e paddings de sections para personalizar cada */
+section {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Hero Section */
+  .hero-como-funciona {
+    position: relative;
+    min-height: 50vh;
+    background: url("/static/img/como-funciona/hero-bg.jpg") center center / cover
+      no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #ffffff;
+  }
+  
+  /* Overlay para melhorar legibilidade */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f9fbe7;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Fica acima do overlay */
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #365942;
+  }
+  
+  .hero-content p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: #648c3b;
+  }
+  
+  /* Seções internas (impacto, processamento, beneficios) */
+  .impacto,
+  .processamento,
+  .beneficios {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+  }
+  
+  /* Containers com flex layout */
+  .impacto-content,
+  .processamento-content,
+  .beneficios-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Texto */
+  .impacto-text,
+  .processamento-text,
+  .beneficios-text {
+    flex: 1 1 300px;
+  }
+  
+  .impacto-text h3,
+  .processamento-text h3,
+  .beneficios-text h3 {
+    font-size: 2.4rem;
+    color: #365942;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .impacto-text p,
+  .processamento-text p,
+  .beneficios-text p {
+    font-size: 1.6rem;
+    color: #648c3b;
+    line-height: 1.8;
+  }
+  
+  /* Imagens */
+  .impacto-image,
+  .processamento-image,
+  .beneficios-image {
+    flex: 1 1 300px;
+    text-align: center;
+  }
+  
+  .impacto-image img,
+  .processamento-image img,
+  .beneficios-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* A seção "beneficios" inverte a ordem do conteúdo em telas maiores */
+  .beneficios-content {
+    flex-wrap: wrap-reverse;
+  }
+  
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    .hero-content h2 {
+      font-size: 2.2rem;
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+    }
+    .impacto-text h3,
+    .processamento-text h3,
+    .beneficios-text h3 {
+      font-size: 2rem;
+    }
+    .impacto-text p,
+    .processamento-text p,
+    .beneficios-text p {
+      font-size: 1.4rem;
+    }
+  }

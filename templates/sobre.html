@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack - Sobre</title>
+  <link rel="icon" type="image/png" href="/static/img/index/icone-planeta.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+  
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/sobre.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/" class="logo-link">
+      <img src="/static/img/index/icone-planeta.png" alt="Ícone de planeta" class="logo-icon">
+      <h1>EcoTrack</h1>
+    </a>
+    </div>
+
+    {% if current_user.is_authenticated %}
+      <!-- Header para usuário logado -->
+      <nav>
+        <ul>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/registrar">Registrar</a></li>
+          <li><a href="/historico">Histórico</a></li>
+          <li><a href="/sugestoes">Sugestões</a></li>
+          <li><a href="/auth/logout" class="btn-primary">Logout</a></li>
+        </ul>
+      </nav>
+    {% else %}
+      <!-- Header para visitantes não logados -->
+      <nav>
+        <ul>
+          <li><a href="/" >Home</a></li>
+          <li><a href="/sobre" class="active">Sobre</a></li>
+          <li><a href="/como-funciona">Como Funciona</a></li>
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/cadastro" class="btn-primary">Cadastrar</a></li>
+        </ul>
+      </nav>
+    {% endif %}
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <!-- Seção de Introdução -->
+    <section class="sobre-introducao">
+      <div class="intro-container">
+        <div class="intro-img">
+          <img src="/static/img/sobre/ilustracao_sustentabilidade_sobre.webp" alt="Ilustração de sustentabilidade" class="ilustracao_sustentabilidade_sobre">
+        </div>
+        <div class="intro-text">
+          <h2>Conheça o EcoTrack</h2>
+          <p>
+            O EcoTrack é uma plataforma revolucionária que auxilia no monitoramento da sustentabilidade pessoal. Ao registrar seu consumo de água, energia, resíduos e hábitos de transporte, você visualiza seu impacto ambiental e recebe orientações para melhorar seus hábitos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Objetivos e Justificativa -->
+    <section class="sobre-objetivos">
+      <div class="objetivos-content">
+        <h2>Objetivos e Justificativa</h2>
+        <p>
+          Em um mundo que enfrenta desafios ambientais crescentes, o EcoTrack busca promover a conscientização e a transformação dos hábitos diários. Monitorar o consumo e a geração de resíduos permite identificar oportunidades para práticas mais sustentáveis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Seção de Funcionalidades -->
+    <section class="sobre-funcionalidades">
+      <h2>Funcionalidades Inovadoras</h2>
+      <div class="funcionalidades-grid">
+        <div class="func-item">
+          <img src="/static/img/sobre/icone-agua.webp" alt="Ícone de água" class="icone">
+          <h3>Registro Diário</h3>
+          <p>Cadastre seu consumo de água, energia e resíduos de forma simples.</p>
+        </div>
+        <div class="func-item">
+          <img src="/static/img/sobre/icone-indice.webp" alt="Ícone de índice" class="icone">
+          <h3>Índice Ambiental</h3>
+          <p>Obtenha um índice personalizado que avalia seu impacto ambiental.</p>
+        </div>
+        <div class="func-item">
+          <img src="/static/img/sobre/icone-feedback.webp" alt="Ícone de feedback" class="icone">
+          <h3>Feedback Personalizado</h3>
+          <p>Receba dicas para adotar práticas mais sustentáveis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Tecnologias e Metodologia -->
+    <section class="sobre-tecnologias">
+      <h2>Tecnologias e Metodologia</h2>
+      <div class="tecnologias-container">
+        <div class="tec-img">
+          <img src="/static/img/sobre/tecnologia-sobre.webp" alt="Ícone de tecnologias">
+        </div>
+        <div class="tec-text">
+          <p>
+            Desenvolvido com HTML, CSS e JavaScript no front-end, Python com Flask no back-end e MySQL para armazenamento, o EcoTrack utiliza as melhores práticas para oferecer uma experiência simples, intuitiva e segura. A gestão do projeto é realizada com Trello e versionamento com Git/GitHub.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção da Equipe -->
+    <section class="sobre-equipe">
+      <h2>Nossa Equipe</h2>
+      <div class="equipe-grid">
+        <div class="equipe-item">
+          <img src="/static/img/sobre/bruno-cesar-foto.jpeg" alt="Bruno Cesar" class="equipe-img">
+          <h3>Bruno Cesar</h3>
+        </div>
+        <div class="equipe-item">
+          <img src="/static/img/sobre/eduardo-kairalla-foto.jpeg" alt="Eduardo Kairalla" class="equipe-img">
+          <h3>Eduardo Kairalla</h3>
+        </div>
+        <div class="equipe-item">
+          <img src="/static/img/sobre/joao-meloni-foto.jpeg" alt="João Meloni" class="equipe-img">
+          <h3>João Meloni</h3>
+        </div>
+        <div class="equipe-item">
+          <img src="/static/img/sobre/tomas-cubeiro-foto.jpeg" alt="Tomás Cubeiro" class="equipe-img">
+          <h3>Tomás Cubeiro</h3>
+        </div>
+        <div class="equipe-item">
+          <img src="/static/img/sobre/victor-hugo-foto.jpeg" alt="Victor Hugo" class="equipe-img">
+          <h3>Victor Hugo</h3>
+        </div>
+      </div>
+      <p class="orientador"><strong>Orientador:</strong> Prof. Dr. André Mendeleck</p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 EcoTrack. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

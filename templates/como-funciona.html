@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>EcoTrack - Como Funciona</title>
+  <link rel="icon" type="image/png" href="/static/img/index/icone-planeta.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/como-funciona.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/" class="logo-link">
+      <img src="/static/img/index/icone-planeta.png" alt="Ícone de planeta" class="logo-icon">
+      <h1>EcoTrack</h1>
+    </a>
+    </div>
+    
+    {% if current_user.is_authenticated %}
+      <!-- Header para usuário logado -->
+      <nav>
+        <ul>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/registrar">Registrar</a></li>
+          <li><a href="/historico">Histórico</a></li>
+          <li><a href="/sugestoes">Sugestões</a></li>
+          <li><a href="/auth/logout" class="btn-primary">Logout</a></li>
+        </ul>
+      </nav>
+    {% else %}
+      <!-- Header para visitantes não logados -->
+      <nav>
+        <ul>
+          <li><a href="/" >Home</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li><a href="/como-funciona" class="active">Como Funciona</a></li>
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/cadastro" class="btn-primary">Cadastrar</a></li>
+        </ul>
+      </nav>
+    {% endif %}
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="hero-como-funciona">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>Descubra Como o EcoTrack Funciona</h2>
+      <p>Transforme seus hábitos e monitore seu impacto ambiental de forma simples e eficaz.</p>
+    </div>
+  </section>
+
+  <!-- Seção: Classificações de Impacto -->
+  <section class="impacto">
+    <div class="impacto-content">
+      <div class="impacto-text">
+        <h3>Classificações de Impacto</h3>
+        <p>
+          O EcoTrack classifica seu impacto ambiental em três níveis:
+          <strong>Baixo Impacto</strong> para hábitos sustentáveis,
+          <strong>Médio Impacto</strong> quando há espaço para melhorias e
+          <strong>Alto Impacto</strong> quando seu consumo ultrapassa os limites ideais.
+        </p>
+      </div>
+      <div class="impacto-image">
+        <img src="/static/img/como-funciona/icone-classificacao.webp" alt="Classificações de Impacto">
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Processamento dos Dados -->
+  <section class="processamento">
+    <div class="processamento-content">
+      <div class="processamento-image">
+        <img src="/static/img/como-funciona/icone-pocessamento.webp" alt="Processamento dos Dados">
+      </div>
+      <div class="processamento-text">
+        <h3>Processamento dos Dados</h3>
+        <p>
+          Seus registros diários são analisados para gerar um índice personalizado. O EcoTrack utiliza algoritmos para acompanhar a evolução dos seus hábitos e oferecer feedbacks que promovem melhorias contínuas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção: Benefícios do Monitoramento -->
+  <section class="beneficios">
+    <div class="beneficios-content">
+      <div class="beneficios-text">
+        <h3>Benefícios do Monitoramento</h3>
+        <p>
+          Ao acompanhar seus dados, você identifica padrões e oportunidades para reduzir seu impacto ambiental. Pequenas mudanças diárias podem resultar em grandes benefícios para o meio ambiente.
+        </p>
+      </div>
+      <div class="beneficios-image">
+        <img src="/static/img/como-funciona/icone-beneficios.webp" alt="Benefícios do Monitoramento">
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 EcoTrack. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

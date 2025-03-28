@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack - Registrar Dados Diários</title>
+  <link rel="icon" type="image/png" href="/static/img/index/icone-planeta.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/registro.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="/" class="logo-link">
+      <img src="/static/img/index/icone-planeta.png" alt="Ícone de planeta" class="logo-icon">
+      <h1>EcoTrack</h1>
+    </a>
+    </div>
+    
+    {% if current_user.is_authenticated %}
+      <!-- Header para usuário logado -->
+      <nav>
+        <ul>
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/registrar" class="active">Registrar</a></li>
+          <li><a href="/historico">Histórico</a></li>
+          <li><a href="/sugestoes">Sugestões</a></li>
+          <li><a href="/auth/logout" class="btn-primary">Logout</a></li>
+        </ul>
+      </nav>
+    {% else %}
+      <!-- Header para visitantes não logados -->
+      <nav>
+        <ul>
+          <li><a href="/" >Home</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li><a href="/como-funciona">Como Funciona</a></li>
+          <li><a href="/auth/login">Login</a></li>
+          <li><a href="/auth/cadastro" class="btn-primary">Cadastrar</a></li>
+        </ul>
+      </nav>
+    {% endif %}
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main>
+    <section class="registrar-section">
+      <h2>Registrar Dados Diários</h2>
+      <p>Preencha os campos abaixo para registrar seu consumo diário.</p>
+
+      {% if error_message %}
+        <div class="alert alert-danger">{{ error_message }}</div>
+      {% endif %}
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+
+      <form action="/registrar" method="POST">
+          <div class="input-group">
+            <label for="agua">Consumo de Água (litros)</label>
+            <input type="number" id="agua" name="agua" placeholder="Ex.: 180" min="0" required>
+          </div>
+          <div class="input-group">
+            <label for="energia">Consumo de Energia (kWh)</label>
+            <input type="number" id="energia" name="energia" placeholder="Ex.: 6.5" step="0.1" min="0" required>
+          </div>
+          <div class="input-group">
+            <label for="residuos">Resíduos Gerados (kg)</label>
+            <input type="number" id="residuos" name="residuos" placeholder="Ex.: 1.5" step="0.1" min="0" required>
+          </div>
+          <div class="input-group">
+            <label for="transporte">Meio de Transporte Utilizado</label>
+            <select id="transporte" name="transporte" required>
+              <option value="">Selecione...</option>
+              <option value="transporte_publico">Transporte Público</option>
+              <option value="bicicleta">Bicicleta</option>
+              <option value="caminhada">Caminhada</option>
+              <option value="carro">Carro</option>
+              <option value="carro_eletrico">Carro Elétrico</option>
+              <option value="carona_compartilhada">Carona Compartilhada</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Registrar Dados</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 EcoTrack. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Script para manipulação do formulário -->
+  <script src="/static/js/registro.js"></script>
+</body>
+</html>

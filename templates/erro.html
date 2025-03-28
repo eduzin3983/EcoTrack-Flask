@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ops... Algo deu errado!</title>
+  <link rel="icon" type="image/png" href="/static/img/index/icone-planeta.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nunito', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #D2B48C;
+      color: #365942;
+      text-align: center;
+    }
+    .error-container {
+      max-width: 600px;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="error-container">
+    <h1>Ops... Algo deu errado!</h1>
+    <p>Ocorreu um erro: <strong>{{ error_code }} - {{ error_name }}</strong></p>
+    <p>{{ error_description }}</p>
+    <p>Por favor, volte e tente novamente.</p>
+  </div>
+</body>
+</html>

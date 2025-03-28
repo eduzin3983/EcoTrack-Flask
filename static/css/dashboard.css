@@ -1,0 +1,213 @@
+/* Seção Overview */
+.dashboard-overview {
+  padding: 4rem 2rem;
+  background-color: #f2e205;
+  text-align: center;
+}
+
+.overview-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+}
+
+.overview-card h2 {
+  font-size: 2.4rem;
+  color: #365942;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.overview-card .classificacao {
+  font-size: 3rem;
+  color: #f2a341;
+  font-weight: 700;
+}
+
+/* Ícone de ajuda (ponto de interrogação) */
+.help-icon {
+  background-color: #F2A341;
+  color: #365942;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.quick-access {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.quick-access button {
+  padding: 1rem 1.5rem;
+  background-color: #365942;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.quick-access button:hover {
+  background-color: #2a4a34;
+}
+
+/* Seção Indicadores */
+.dashboard-indicators {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.dashboard-indicators h2 {
+  font-size: 2.8rem;
+  color: #365942;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.indicator-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.indicator-card {
+  background: #e8f5e9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.indicator-card img {
+  width: 150px;
+  border-radius: 10px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.indicator-card h3 {
+  font-size: 1.8rem;
+  color: #365942;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.indicator-card p {
+  font-size: 1.6rem;
+  color: #648c3b;
+}
+
+/* Seção Gráfica */
+.dashboard-graph {
+  padding: 4rem 2rem;
+  background-color: #f9fbe7;
+  text-align: center;
+}
+
+.dashboard-graph h2 {
+  font-size: 2.8rem;
+  color: #365942;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.dashboard-graph canvas {
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* Seção Notificações */
+.dashboard-notifications {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.dashboard-notifications h2 {
+  font-size: 2.8rem;
+  color: #365942;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.dashboard-notifications ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.dashboard-notifications ul li {
+  font-size: 1.6rem;
+  color: #648c3b;
+  background: #e8f5e9;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+/* Modal de Ajuda (Classificações) */
+.help-modal {
+  display: none; /* Oculto por padrão */
+  position: fixed;
+  z-index: 999; /* Fica acima de outros elementos */
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  overflow: auto; /* Permite rolagem se o conteúdo for maior que a tela */
+}
+
+.help-modal-content {
+  background-color: #fff;
+  max-width: 500px;
+  margin: 10% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative;
+  color: #365942;
+}
+
+.help-modal-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.help-modal-content p {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  color: #648C3B;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #F2A341;
+}
