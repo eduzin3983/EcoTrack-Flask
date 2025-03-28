@@ -99,7 +99,7 @@ EcoTrack/
 
 ### 1. Clonar o Repositório  
 ```bash
-git clone https://github.com/seu_usuario/EcoTrack.git }
+git clone https://github.com/eduzin3983/EcoTrack-Flask.git
 ```
 
 ### 2. Criar e Ativar o Ambiente Virtual  
