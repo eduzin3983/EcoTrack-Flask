@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Registro</title>
+  <link rel="icon" type="image/png" href="/static/img/index/icone-planeta.png">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="stylesheet" href="/static/css/registro.css">
+  <link rel="stylesheet" href="/static/css/editar.css">
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for cat, msg in messages %}
+        <div class="alert alert-{{cat}}">{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+  
+    <div class="editar-container">
+      <h2>Editar Registro de {{ reg.data_registro }}</h2>
+      <form method="POST" class="editar-form">
+        <label>Água (L):
+          <input name="agua" type="number" step="0.1" min="0" value="{{ reg.agua }}" required>
+        </label>
+  
+        <label>Energia (kWh):
+          <input name="energia" type="number" step="0.1" min="0" value="{{ reg.energia }}" required>
+        </label>
+  
+        <label>Resíduos (kg):
+          <input name="residuos" type="number" step="0.1" min="0" value="{{ reg.residuos }}" required>
+        </label>
+  
+        <label>Transporte:
+          <select name="transporte" required>
+            {% for key, label in transporte_map.items() %}
+              <option value="{{ key }}" {% if key == reg.transporte %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+  
+        <div class="actions">
+          <button type="submit" class="btn-primary">Salvar Alterações</button>
+          <a href="{{ url_for('dashboard.historico') }}" class="btn-cancel">Cancelar</a>
+        </div>
+      </form>
+    </div>
+  </body>
+  </html>

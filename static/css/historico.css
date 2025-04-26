@@ -110,3 +110,16 @@
     font-size: 1.8rem;
     color: #648c3b;
   }
+
+.btn-excluir {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.btn-excluir:hover {
+  color: #c0392b;
+}

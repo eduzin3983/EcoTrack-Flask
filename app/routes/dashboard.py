@@ -4,8 +4,7 @@ from flask_login import login_required, current_user
 from datetime import datetime, timezone
 from app.models import RegistrosDiarios
 from app import db
-from app.services.algoritmos import (calcular_score_registro, classificar_score, classificar_variavel_agua, 
-                            classificar_variavel_energia, classificar_variavel_residuos, classificar_variavel_transporte, score_transporte)
+from app.services.algoritmos import (calcular_score_registro, classificar_score)
 
 dashboard_bp = Blueprint('dashboard', __name__)
 
@@ -174,6 +173,7 @@ def historico():
         classificacao = classificar_score(score)
         transporte_amigavel = TRANSPORTE_MAP.get(reg.transporte, reg.transporte)
         dados_registros.append({
+            "id": reg.id,
             "data_registro": reg.data_registro,
             "agua": reg.agua,
             "energia": reg.energia,
@@ -189,3 +189,42 @@ def historico():
         dados_registros.sort(key=lambda x: x.get("transporte"))
 
     return render_template('historico.html', dados_registros=dados_registros)
+
+@dashboard_bp.route('/historico/edit/<int:registro_id>', methods=['GET', 'POST'])
+@login_required
+def editar_registro(registro_id):
+    from app.models import RegistrosDiarios
+    reg = RegistrosDiarios.query.filter_by(id=registro_id, user_id=current_user.id).first_or_404()
+
+    if request.method == 'POST':
+        try:
+            reg.agua    = float(request.form['agua'])
+            reg.energia = float(request.form['energia'])
+            reg.residuos= float(request.form['residuos'])
+            reg.transporte = request.form['transporte']
+            db.session.commit()
+            flash("Registro atualizado com sucesso!", "success")
+            return redirect(url_for('dashboard.historico'))
+        except Exception:
+            flash("Erro ao atualizar. Verifique os dados e tente novamente.", "danger")
+            db.session.rollback()
+            # cai para o render_template
+
+    return render_template('editar_registro.html', reg=reg, transporte_map=TRANSPORTE_MAP)
+
+from flask import abort
+
+@dashboard_bp.route('/historico/delete/<int:registro_id>', methods=['POST'])
+@login_required
+def excluir_registro(registro_id):
+    # Busca o registro
+    reg = RegistrosDiarios.query.get_or_404(registro_id)
+
+    # Garante que o usuário só possa excluir seus próprios registros
+    if reg.user_id != current_user.id:
+        abort(403)
+
+    db.session.delete(reg)
+    db.session.commit()
+    flash("Registro excluído com sucesso!", "success")
+    return redirect(url_for('dashboard.historico'))

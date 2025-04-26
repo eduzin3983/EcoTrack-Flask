@@ -1,0 +1,61 @@
+.editar-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  
+  .editar-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+    color: #2f5d62;
+    text-align: center;
+  }
+  
+  .editar-form label {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 600;
+    color: #385e4f;
+  }
+  
+  .editar-form input,
+  .editar-form select {
+    width: 100%;
+    padding: .5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #c5d4c3;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .editar-form .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .editar-form .btn-primary {
+    background-color: #f2a33c;
+    color: white;
+    border: none;
+    padding: .75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color .2s;
+  }
+  
+  .editar-form .btn-primary:hover {
+    background-color: #d48b25;
+  }
+  
+  .editar-form .btn-cancel {
+    color: #385e4f;
+    text-decoration: underline;
+    font-size: .9rem;
+  }
+  

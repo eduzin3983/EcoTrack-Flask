@@ -1,8 +1,7 @@
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
 from app.models import RegistrosDiarios, Sugestoes
-from app.services.algoritmos import (classificar_variavel_agua, classificar_variavel_energia, 
-                            classificar_variavel_residuos, classificar_variavel_transporte, score_transporte)
+from app.services.algoritmos import (classificar_variavel_agua, classificar_variavel_energia, classificar_variavel_residuos, classificar_variavel_transporte, score_transporte)
 import random
 
 sugestoes_bp = Blueprint('sugestoes', __name__)
@@ -16,9 +15,7 @@ def get_random_sugestao(topico, impacto):
 @sugestoes_bp.route('/sugestoes')
 @login_required
 def sugestoes():
-    registros = RegistrosDiarios.query.filter_by(user_id=current_user.id)\
-                    .order_by(RegistrosDiarios.id.desc())\
-                    .limit(7).all()
+    registros = RegistrosDiarios.query.filter_by(user_id=current_user.id).order_by(RegistrosDiarios.id.desc()).limit(7).all()
 
     if not registros:
         msg_sem_dados = "Você ainda não registrou nenhum dado. Registre seus dados diários para receber sugestões personalizadas."

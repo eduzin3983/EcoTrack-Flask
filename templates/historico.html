@@ -80,6 +80,7 @@
       
       <!-- Tabela de Registros -->
       <div class="tabela-container">
+        <!-- ... cabeçalho inalterado ... -->
         <table>
           <thead>
             <tr>
@@ -89,6 +90,8 @@
               <th>Resíduos (kg)</th>
               <th>Transporte</th>
               <th>Classificação</th>
+              <th>Editar</th>
+              <th>Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -100,6 +103,14 @@
                 <td>{{ reg.residuos }}</td>
                 <td>{{ reg.transporte }}</td>
                 <td>{{ reg.classificacao }}</td>
+                <td>
+                  <a href="{{ url_for('dashboard.editar_registro', registro_id=reg.id) }}" class="btn-excluir"> ✏️ </a>
+                  <td>
+                    <form method="POST" action="{{ url_for('dashboard.excluir_registro', registro_id=reg.id) }}" onsubmit="return confirm('Tem certeza que deseja excluir este registro?');" style="display:inline;">
+                      <button type="submit" class="btn-excluir">🗑️</button>
+                    </form>
+                  </td>          
+                </td>
               </tr>
             {% endfor %}
           </tbody>
